@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <section class="nav-container">
+        <header>
+            <a href="index.html" class="logo">Hammaad Memon</a>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#projects">My Projects</a></li>
+                <li><a href="#skills">My Skills</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </section>
+    <div class="hero">
+        <div id="left-pane"></div>
+        <div id="right-pane">
+        </div>
+        <div id="right-overflow">
+            <div class="scroll-icon-container s1">&#9660;</div>
+            <div class="scroll-icon-container s2">&#9660;</div>
+            <div class="scroll-icon-container s3">&#9660;</div>
+        </div>
+        <div class="left-overflow"></div>
+        <div class="left-overflow" id="left-overflow-2"></div>
+        <h1>Custom<a> </a> Web Solutions</h1>    
+    </div>
+    <section id="projects" class="featured">
+        <div class="left">
+            <div class="inner transition2">
+                <p class="subtitle" style="color: #2C3531">Featured Project</p>
+                <a href="https://rattle-chat.herokuapp.com"  target="_blank" class="featured-title">Rattle Chat</a>
+                <p class="featured-desc">Rattle uses a custom built server and database created with node.js and the database library nedb. Rattle is not for consumer use and serves as a demo which is why its databases are wiped once every 24 hours.</p>
+            </div>
+        </div>
+        <div class="right">
+            <a href="https://rattle-chat.herokuapp.com" target="_blank"><img src="images\mobile-rattle.PNG"></a>
+        </div>
+    </section>
+    <section id="skills" class='skills'>
+        <div class="skills-container">
+            <ul>
+                <li class="transition2">
+                    <div class="icon-container one">
+                        <img src="images/website-icon.png">
+                    </div>
+                    <p class='skill-title'>Frontend Development</p>
+                    <p class="featured-desc skill-desc">Using native css and frameworks like Sass, I have created user-friendly UIs to help users make use of my projects.</p>
+                </li>
+                <li class="transition2">
+                    <div class="icon-container one">
+                        <img src="images/js-logo.png">
+                    </div>
+                    <p class='skill-title'>Javascript</p>
+                    <p class="featured-desc skill-desc">From serverside to clientside, this programming language along with plugins like jQuery have been essential in operating my projects.</p>
+                </li>
+                <li class="transition2">
+                    <div class="icon-container one">
+                        <img src="images/server-icon.png">
+                    </div>
+                    <p class='skill-title'>Server & Database Design</p>
+                    <p class="featured-desc skill-desc">I have experience creating custom servers and databases for numerous applications using node.js and various npm plugins.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="portfolio">
+        <div class="portfolio-container transition3">
+            <div class="portfolio-left">
+                <div class="inner">
+                    <p class="subtitle">Organization Algorithm</p>
+                    <p class="featured-title"><a href="https://scheduleplanner.netlify.app" target="_blank">Schedule Planner</a></p>
+                    <p class="featured-desc">One of my first projects, this application uses an organization algorithm to help structure a schedule based around an ideal work-to-rest pattern.</p>
+                </div>
+            </div>
+            <a href="https://scheduleplanner.netlify.app" target="_blank"><img src="images/mobile-planner.PNG"></a>
+        </div>
+        <div class="portfolio-container transition3">
+            <div class="portfolio-left">
+                <div class="inner">
+                    <p class="subtitle">Projection Tool</p>
+                    <p class="featured-title"><a href="https://lightprojectorsim.netlify.app/">Light Projector Sim</a></p>
+                    <p class="featured-desc">This sandbox uses custom data for Flash LED performance across different angles and recreates it on an HTML5 canvas to allow for its testing under various circumstances.</p>
+                </div>
+            </div>
+            <a href="https://lightprojectorsim.netlify.app/" target="_blank"><img id="projector-img" src="images/mobile-projector.PNG"></a>
+        </div>
+    </section>
+    <section id="contact" class="footer">
+        <h1 class="call-to-action">Contact Me</h1>
+        <div class="contact-container">
+            <a href="https://github.com/Hammaad-M/" target="_blank"><img src="images/github.png" alt="github-icon" class="icons"></a>
+            <a href="mailto:hammaad.memon@gmail.com" target="_blank"><img src="images/gmail.png" alt="gmail-icon" class="icons"></a>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js" integrity="sha512-QcYm1q7RbnXmwY7HJ0H7938IS0MalTPYqGUF0fIwQgEjMBt2tqjDBt+R5I+ppdwEohjMdHnFU0H+RxmrGQ8qcg==" crossorigin="anonymous"></script>
+    <script>
+        console.log("check")
+        gsap.registerPlugin(ScrollTrigger);
+        const tl = gsap.timeline();
+
+        gsap.from(".transition2", {
+            scrollTrigger: {
+                trigger: ".transition2",
+                start:"bottom bottom"
+            },
+            y: 70,
+            opacity: 0,
+            duration: 1.3,
+            stagger: .4
+        });
+        gsap.from(".transition3", {
+            scrollTrigger: {
+                trigger: ".transition3",
+                start:"top bottom"
+            },
+            y: 90,
+            opacity: 0,
+            duration: 1.3,
+            stagger: .4
+        });
+        gsap.from(".footer", {
+            scrollTrigger: {
+                trigger: ".footer",
+                start:"top bottom"
+            },
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: .4
+        });
+    </script>
+</body>
+</html>
